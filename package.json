@@ -9,7 +9,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "eslint": "eslint src --ext .js,.ts,.vue --rulesdir eslint-rules/rules",
+    "eslint:build": "tsc --project eslint-rules/tsconfig.eslint.json -w",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,10 +26,13 @@
   },
   "homepage": "https://github.com/toshick/try-original-eslint#readme",
   "devDependencies": {
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
     "eslint-plugin-vue": "^9.8.0",
-    "nuxt": "3.0.0"
+    "jest": "^29.3.1",
+    "nuxt": "3.0.0",
+    "ts-jest": "^29.0.3"
   }
 }

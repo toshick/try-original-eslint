@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "target": "ES2022",
+    "module": "CommonJS",
+    "outDir": "./rules",
+    "rootDir": "./src"
+  }
+}
