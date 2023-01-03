@@ -10,5 +10,6 @@
     "module": "CommonJS",
     "outDir": "./rules",
     "rootDir": "./src"
-  }
+  },
+  "exclude": ["./__tests__"]
 }

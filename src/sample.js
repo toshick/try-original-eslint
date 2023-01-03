@@ -5,3 +5,7 @@ const a = 'カマレオさんはバナナを買った';
 function name(params) {
   return 'カマ-レオワールド';
 }
+
+const Hohoho = function () {
+  return 0;
+};

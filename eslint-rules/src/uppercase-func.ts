@@ -1,8 +1,4 @@
-import { ESLintUtils } from '@typescript-eslint/utils';
-
-const createRule = ESLintUtils.RuleCreator(
-  (ruleName: string) => `https://example.com/rule/${ruleName}`
-);
+import { createRule } from './_helper';
 
 module.exports = createRule({
   create(context) {
@@ -17,13 +13,42 @@ module.exports = createRule({
           }
         }
       },
+      FunctionExpression(node) {
+        // const variables = context.getDeclaredVariables(node);
+        // console.log('variables', variables);
+        // const v = variables[0];
+        // const name = v.name;
+        // const src = context.getSourceCode();
+        // const srcText = src.getText(node);
+        // console.log('srcText', srcText);
+        // const tokens = src.getTokens(node);
+        // console.log('tokens', tokens);
+      },
+      VariableDeclarator(node) {
+        const variables = context.getDeclaredVariables(node);
+        const v = variables[0];
+        const name = v.name;
+
+        const src = context.getSourceCode();
+        // const srcText = src.getText(node);
+        const tokens = src.getTokens(node);
+        // console.log('tokens', tokens);
+        const found = tokens.find((t) => {
+          return t.type === 'Keyword' && t.value === 'function';
+        });
+        if (found && /^[a-z]/.test(name)) {
+          context.report({
+            messageId: 'uppercase',
+            node: node.id,
+          });
+        }
+      },
     };
   },
-  name: 'uppercase-func',
+  name: __filename,
   meta: {
     docs: {
-      description:
-        'Function declaration names should start with an upper-case letter.',
+      description: 'Function declaration names should start with an upper-case letter.',
       recommended: 'warn',
     },
     messages: {

@@ -6,9 +6,9 @@ module.exports = {
       Literal: function (node) {
         if (
           typeof node.value == 'string' &&
-          node.value.indexOf('カマレオ') !== -1
+          node.value.indexOf('ニャオス') !== -1
         ) {
-          context.report({ node: node, message: 'カマレオは禁止だカマ' });
+          context.report({ node: node, message: 'ニャオスは禁止だカマ' });
         }
       },
     };

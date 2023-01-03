@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     semi: ['error', 'always'],
     'not-pass': 'error',
+    'no-camaleao': 'error',
     'uppercase-func': 'error',
   },
 };
