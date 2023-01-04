@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "string-quotes": "single",
+    "custom-property-pattern": "(?<=my-)",
+    "selector-class-pattern": "(^[A-Z][a-zA-Z0-9]+__[A-Z][a-zA-Z0-9]+$|^[A-Z][a-zA-Z0-9]+$|^-[^-]+$)"
+  }
+}
