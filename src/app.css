@@ -1,0 +1,37 @@
+:root {
+  --my-first-color: #16f;
+  --my-second-color: #ff7;
+}
+
+html {
+  background-color: blue;
+}
+
+p {
+  font-size: 13px;
+}
+
+p::after {
+  content: '';
+  margin: 10px;
+}
+
+.Small__Title {
+  color: red;
+}
+
+.SmallItem {
+  font-size: 11px;
+}
+
+.SmallItem__Text02 {
+  font-size: 11px;
+}
+
+.-red {
+  font-size: 11px;
+}
+
+/* .SmallItem__Element__Block {
+  border: solid 1px red;
+} */

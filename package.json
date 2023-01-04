@@ -12,7 +12,8 @@
     "postinstall": "nuxt prepare",
     "eslint": "eslint src --ext .js,.ts,.vue",
     "eslint:build": "tsc --project eslint-rules/tsconfig.eslint.json -w",
-    "test": "jest"
+    "test": "jest",
+    "stylelint": "stylelint **/*.css"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "jest": "^29.3.1",
     "nuxt": "3.0.0",
     "prettier": "2.8.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-standard": "^29.0.0",
     "ts-jest": "^29.0.3"
   }
 }
