@@ -1,15 +1,13 @@
+const rulesDirPlugin = require('eslint-plugin-rulesdir');
+rulesDirPlugin.RULES_DIR = 'eslint-rules/rules';
+
 module.exports = {
   root: true,
   env: {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-essential',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking'],
   overrides: [],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -20,12 +18,11 @@ module.exports = {
     project: ['./tsconfig.json'],
     extraFileExtensions: ['.vue'],
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ['vue', '@typescript-eslint', 'rulesdir'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
-    semi: ['error', 'always'],
-    'not-pass': 'error',
-    'no-camaleao': 'error',
-    'uppercase-func': 'error',
+    'rulesdir/not-pass': 'error',
+    'rulesdir/no-camaleao': 'error',
+    'rulesdir/uppercase-func': 'error',
   },
 };
